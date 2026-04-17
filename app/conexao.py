@@ -12,10 +12,10 @@ def connect():
     try:
         psw = os.getenv("DB_PASSWORD")
         connect = pg.connect(
-            database = 'nology',
+            database = 'postgres',
             user = 'postgres',
-            password = psw,
-            host = '127.0.0.1',
+            password = 'dskjfsdknfsjkdfhsdjkf',
+            host = 'db.kegawbegcqwwrczfrrcl.supabase.co',
             port = '5432',
         )
         
