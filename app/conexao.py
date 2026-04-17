@@ -13,12 +13,11 @@ def connect():
     try:
         conn = pg.connect(
             database='postgres',
-            user='postgres',
+            user='postgres.kegawbegcqwwrczfrrcl',
             password='dskjfsdknfsjkdfhsdjkf',
-            host='db.kegawbegcqwwrczfrrcl.supabase.co',
-            port=5432,
+            host='aws-1-us-east-2.pooler.supabase.com',
+            port=6543,
             sslmode='require',
-            options='-c hostaddr=IPv4_DO_SUPABASE'
         )
         return conn
 
