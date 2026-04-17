@@ -8,22 +8,24 @@ from pathlib import Path
 env_path = Path('.') / '.env'
 load_dotenv(dotenv_path=env_path)
 
+
 def connect():
     try:
-        psw = os.getenv("DB_PASSWORD")
-        connect = pg.connect(
-            database = 'postgres',
-            user = 'postgres',
-            password = 'dskjfsdknfsjkdfhsdjkf',
-            host = 'db.kegawbegcqwwrczfrrcl.supabase.co',
-            port = '5432',
+        conn = pg.connect(
+            database='postgres',
+            user='postgres',
+            password='dskjfsdknfsjkdfhsdjkf',
+            host='db.kegawbegcqwwrczfrrcl.supabase.co',
+            port=5432,
+            sslmode='require',
+            options='-c hostaddr=IPv4_DO_SUPABASE'
         )
-        
-        return connect
+        return conn
 
-    except Error as e:
-        print(f"Erro ao conectar ao PostgreSQL: {e}")
-        
+    except Exception as e:
+        print("Erro ao conectar:", e)
+        return None
+
 
 def encerra_conexao(connect):
     if connect:
