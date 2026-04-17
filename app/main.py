@@ -31,8 +31,8 @@ async def calcular(request: Request):
     except:
         body = await request.form()
 
-    tipo_id = int(body.get("tipo_id"))
-    valor = float(body.get("valor"))
+    tipo_id = int(body.get("id_tipo_cliente"))
+    valor = float(body.get("valor_consulta"))
 
     resultado = controllerCashback.calculate_cashback(tipo_id, valor)
 
